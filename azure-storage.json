@@ -80,10 +80,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://{{azure_storage_account}}.queue.core.windows.net/:queueName/messages",
+					"raw": "https://{{account_name}}.queue.core.windows.net/:queueName/messages",
 					"protocol": "https",
 					"host": [
-						"{{azure_storage_account}}",
+						"{{account_name}}",
 						"queue",
 						"core",
 						"windows",
@@ -137,10 +137,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://{{azure_storage_account}}.blob.core.windows.net/:containerName/:filename",
+					"raw": "https://{{account_name}}.blob.core.windows.net/:containerName/:filename",
 					"protocol": "https",
 					"host": [
-						"{{azure_storage_account}}",
+						"{{account_name}}",
 						"blob",
 						"core",
 						"windows",
@@ -198,10 +198,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://{{azure_storage_account}}.blob.core.windows.net/:containerName/:filename",
+					"raw": "https://{{account_name}}.blob.core.windows.net/:containerName/:filename",
 					"protocol": "https",
 					"host": [
-						"{{azure_storage_account}}",
+						"{{account_name}}",
 						"blob",
 						"core",
 						"windows",
@@ -248,7 +248,7 @@
 	],
 	"variable": [
 		{
-			"key": "azure_storage_account",
+			"key": "account_name",
 			"value": "sjostoragequeue"
 		},
 		{
