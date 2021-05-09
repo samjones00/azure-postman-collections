@@ -31,10 +31,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://{{azure_storage_account}}.queue.core.windows.net/:queueName/messages",
+					"raw": "https://{{account_name}}.queue.core.windows.net/:queueName/messages",
 					"protocol": "https",
 					"host": [
-						"{{azure_storage_account}}",
+						"{{account_name}}",
 						"queue",
 						"core",
 						"windows",
@@ -133,7 +133,7 @@
 				"body": {
 					"mode": "file",
 					"file": {
-						"src": "/C:/Users/Sam/Pictures/example (2).jpg"
+						"src": ""
 					}
 				},
 				"url": {
