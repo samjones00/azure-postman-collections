@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "c57f1ed8-8a49-49d6-976f-c16d2dc9fd3e",
-		"name": "Update fsl-underwriting-topic status",
+		"name": "Service Bus",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -125,7 +125,7 @@
 		},
 		{
 			"key": "sasKey",
-			"value": "dQl00GN+JA7zfhg5a3R34tvACOD0T2JpBfQzRrOlWxo="
+			"value": ""
 		}
 	]
 }
