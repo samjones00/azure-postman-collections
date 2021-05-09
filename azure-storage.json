@@ -1,0 +1,259 @@
+{
+	"info": {
+		"_postman_id": "1352594c-7e61-409f-ab8a-3967b1e80454",
+		"name": "Storage Queues",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Message to Queue",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<QueueMessage>\r\n    <MessageText>{\r\n      \"car\": \"Audi\",\r\n      \"year\": 1983\r\n}</MessageText>\r\n</QueueMessage>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{azure_storage_account}}.queue.core.windows.net/:queueName/messages",
+					"protocol": "https",
+					"host": [
+						"{{azure_storage_account}}",
+						"queue",
+						"core",
+						"windows",
+						"net"
+					],
+					"path": [
+						":queueName",
+						"messages"
+					],
+					"variable": [
+						{
+							"key": "queueName",
+							"value": "postmantest"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clear Queue",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<QueueMessage>\r\n    <MessageText>{\r\n      \"car\": \"Audi\",\r\n      \"year\": 1983\r\n}</MessageText>\r\n</QueueMessage>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{azure_storage_account}}.queue.core.windows.net/:queueName/messages",
+					"protocol": "https",
+					"host": [
+						"{{azure_storage_account}}",
+						"queue",
+						"core",
+						"windows",
+						"net"
+					],
+					"path": [
+						":queueName",
+						"messages"
+					],
+					"variable": [
+						{
+							"key": "queueName",
+							"value": "postmantest"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Blob",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-ms-blob-type",
+						"value": "BlockBlob",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "image/jpeg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/C:/Users/Sam/Pictures/example (2).jpg"
+					}
+				},
+				"url": {
+					"raw": "https://{{azure_storage_account}}.blob.core.windows.net/:containerName/:filename",
+					"protocol": "https",
+					"host": [
+						"{{azure_storage_account}}",
+						"blob",
+						"core",
+						"windows",
+						"net"
+					],
+					"path": [
+						":containerName",
+						":filename"
+					],
+					"variable": [
+						{
+							"key": "containerName",
+							"value": "images"
+						},
+						{
+							"key": "filename",
+							"value": "image3.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Blob",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-ms-blob-type",
+						"value": "BlockBlob",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "image/jpeg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/C:/Users/Sam/Pictures/example (2).jpg"
+					}
+				},
+				"url": {
+					"raw": "https://{{azure_storage_account}}.blob.core.windows.net/:containerName/:filename",
+					"protocol": "https",
+					"host": [
+						"{{azure_storage_account}}",
+						"blob",
+						"core",
+						"windows",
+						"net"
+					],
+					"path": [
+						":containerName",
+						":filename"
+					],
+					"variable": [
+						{
+							"key": "containerName",
+							"value": "images"
+						},
+						{
+							"key": "filename",
+							"value": "image3.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.request.url += pm.collectionVariables.get(\"shared_access_signature\");"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "azure_storage_account",
+			"value": "sjostoragequeue"
+		},
+		{
+			"key": "shared_access_signature",
+			"value": ""
+		}
+	]
+}
